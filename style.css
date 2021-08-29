@@ -1,0 +1,212 @@
+/*! minireset.css v0.0.6 | MIT License | github.com/jgthms/minireset.css */
+html, body, p, ol, ul, li, dl, dt, dd, blockquote, figure, fieldset, legend, textarea, pre, iframe, hr, h1, h2, h3, h4, h5, h6 {
+  margin: 0;
+  padding: 0;
+}
+
+h1, h2, h3, h4, h5, h6 {
+  font-size: 100%;
+  font-weight: normal;
+}
+
+ul {
+  list-style: none;
+}
+
+button, input, select {
+  margin: 0;
+}
+
+html {
+  box-sizing: border-box;
+}
+
+*, *::before, *::after {
+  box-sizing: inherit;
+}
+
+img, video {
+  height: auto;
+  max-width: 100%;
+}
+
+iframe {
+  border: 0;
+}
+
+table {
+  border-collapse: collapse;
+  border-spacing: 0;
+}
+
+td, th {
+  padding: 0;
+}
+
+a {
+  text-decoration: none;
+  color: black;
+}
+
+h1, h2, h3 {
+  font-size: 20px;
+}
+
+h4 {
+  font-size: 1rem;
+}
+
+body {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+  font-family: "Roboto", sans-serif;
+}
+
+/************************HEADER CONTAINER/LOGO/TITRE/EXPLORER RESTAURANTS***********************/
+.header__container {
+  display: flex;
+  flex-direction: column;
+  background-color: #F6F6F6;
+  align-items: center;
+  width: 100%;
+}
+.header__container .header__container_image {
+  width: 100%;
+  background-color: white;
+}
+.header__container .header__image {
+  width: 35%;
+  margin: 15px auto;
+  font-family: "Shrikhand", cursive;
+  text-align: center;
+}
+.header__container .header__localisation {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  column-gap: 3%;
+  background-color: #99e2d0;
+  background: linear-gradient(#99E2D0, #ebf3f3);
+  width: 100%;
+  max-width: 1400px;
+  padding: 15px 0;
+}
+.header__container .header__localisation p {
+  font-weight: 700;
+}
+.header__container .header__content {
+  display: flex;
+  flex-direction: column;
+  row-gap: 10px;
+  padding: 30px 20px;
+  text-align: center;
+}
+.header__container .header__content h2 {
+  font-weight: 900;
+}
+.header__container .header__button {
+  border-radius: 50px;
+  background-color: #9356dc;
+  background: linear-gradient(150deg, #e07cc4 10%, #9c70d3 95%);
+  box-shadow: 0 0 5px black;
+  border: none;
+  color: white;
+  font-size: 1rem;
+  padding: 15px 20px;
+  margin: 0 0 50px 0;
+}
+
+/**************************MAIN CONTAINER SECTIONH3CHOISE AND SECTIONH3CARD**********************/
+.main__container {
+  margin: auto;
+  max-width: 1440px;
+}
+
+/******************SECTION SECTION H3 AND FONCTIONNEMENT /CHOISE /RESTAURANTS/MENU/DEGUSTEZ**********/
+.navH3Choise {
+  display: flex;
+  flex-direction: column;
+  row-gap: 18px;
+  padding: 15px 15px 60px 15px;
+}
+.navH3Choise h3 {
+  font-weight: 900;
+  max-width: 330px;
+  width: 100%;
+  margin: auto;
+}
+.navH3Choise .navH3Choise__content {
+  box-shadow: 0px 10px 37px -3px rgba(0, 0, 0, 0.3);
+  -webkit-box-shadow: 0px 10px 37px -3px rgba(0, 0, 0, 0.3);
+  -moz-box-shadow: 0px 10px 37px -3px rgba(0, 0, 0, 0.3);
+  border-radius: 10px;
+  width: 95%;
+  max-width: 600px;
+  margin: auto;
+  background-color: #ece3e3;
+  text-align: center;
+  font-weight: 700;
+  padding: 10px;
+}
+
+/**********************************SECTION ARTICLES H3 AND CARD*****************************/
+.sectionH3Card {
+  max-width: 900px;
+  margin: auto;
+  background-color: #F6F6F6;
+}
+.sectionH3Card h3 {
+  font-weight: 900;
+  padding: 20px;
+  width: 100%;
+  max-width: 330px;
+  margin: auto;
+}
+.sectionH3Card .container__articles {
+  display: flex;
+  flex-wrap: wrap;
+  row-gap: 1rem;
+  column-gap: 2rem;
+  justify-content: space-around;
+  padding: 0 20px 33px 20px;
+}
+.sectionH3Card .container__articles .card {
+  border-radius: 20px;
+  box-shadow: 0px 10px 37px -3px rgba(0, 0, 0, 0.3);
+  -webkit-box-shadow: 0px 10px 37px -3px rgba(0, 0, 0, 0.3);
+  -moz-box-shadow: 0px 10px 37px -3px rgba(0, 0, 0, 0.3);
+  background-color: white;
+}
+.sectionH3Card .container__articles .card__image {
+  object-fit: cover;
+  border-radius: 20px 20px 0 0;
+}
+.sectionH3Card .container__articles .card__content {
+  display: flex;
+  flex-direction: column;
+  position: relative;
+  justify-content: center;
+}
+.sectionH3Card .container__articles .card__content h4 {
+  font-weight: 700;
+  padding: 5px 0 0 10px;
+}
+.sectionH3Card .container__articles .card__content p {
+  padding: 0 0 10px 10px;
+  font-weight: 100;
+}
+.sectionH3Card .container__articles .card__content .card__heart {
+  position: absolute;
+  align-self: flex-end;
+  margin-right: 10px;
+}
+
+/*************************************FOOTER**********************************************/
+.footer__container {
+  border: solid 1px black;
+  width: 100%;
+  height: 20vh;
+}
+
+/*# sourceMappingURL=style.css.map */
