@@ -1,3 +1,4 @@
+@import url('https://fonts.googleapis.com/css2?family=Shrikhand&display=swap');
 @import "libs/reset.scss";
 @import "libs/mixins.scss";
 $primaire: #9356dc;
@@ -57,7 +58,7 @@ body {
         @include border-rounded;
         background-color: $primaire;
         background: linear-gradient(150deg, #e07cc4 10%, #9c70d3 95%);
-        box-shadow: 0 0 7px black;
+        @include shadow;
         border: none;
         color: white;
         font-size: 1rem;
@@ -74,7 +75,7 @@ body {
     max-width: 1440px;
 }
 /******************SECTION SECTION H3 AND FONCTIONNEMENT /CHOISE /RESTAURANTS/MENU/DEGUSTEZ**********/
-.navH3Choise {
+.navH3Choise, .articleH3Choise {
     display: flex;
     flex-direction: column;
     row-gap: 18px;
@@ -88,7 +89,7 @@ body {
     .navH3Choise__content {
         position: relative;
         @include shadow;
-        border-radius: 10px;
+        border-radius: 20px;
         width: 95%;
         max-width: 800px;
         margin: auto;
@@ -96,6 +97,9 @@ body {
         text-align: center;
         font-weight: 700;
         padding: 10px 0;
+        & :hover {
+            opacity: 0.6;
+        }
         & .number_circle {
             position: absolute;
             background-color: $primaire;
@@ -232,7 +236,6 @@ body {
 }
 /*************PAGE LA PALETTE DU GOUT***************************/
 .main__paletteDuGout__container {
-    height: 80VH;
     & container__img {
         object-fit: cover;
     }
@@ -241,8 +244,100 @@ body {
      position: relative;
      .fa-arrow-left {
          position: absolute;
-         font-size:1.5rem;
-         padding: 30px;
+         font-size:1.2rem;
+         margin: 20px;
+         max-height: 50px;
 
      }
+}
+.section__h2 {
+        display: flex;
+        justify-content: space-between;
+        max-width: 800px;
+        position: relative;
+        width: 100%;
+        margin: 40px auto;
+        padding: 10px;
+        text-align: center;
+        & h2 {
+            font-weight: bold;
+            font-family: "Shrikhand", cursive;
+            font-style: italic;
+            font-size: 30px;
+            
+        }
+        .section__heart {
+            position: absolute;
+            align-self: flex-end;
+            right: 10px;
+            align-self: center;
+            color: black;
+            font-size: 34px;
+            font-weight: bolder;
+        }
+        .section__heart2 {
+            position: absolute;
+            right: 12px;
+            align-self: center;
+            color: #fff;
+            font-size: 29px;
+         
+        }
+        .section__heart2::before {
+            font-weight: bold;
+            transition: color 1s ease-out;
+        }
+        .section__heart2:hover::before {
+            color: $primaire;
+        }
+}
+.articleH3Choise__container {
+    display: flex;
+    @include shadow;
+    border-radius:10px 10px 10px 10px;
+    width: 95%;
+    max-width: 800px;
+    margin: auto; 
+    .articleH3Choise__content { 
+        display: flex;
+        flex-direction: column;
+        align-items: flex-start;
+        @include two-bottom-rouned-corners-left;  
+        background-color: #ece3e3;
+        text-align: center;
+        width: 100%;
+        padding: 10px 10px !important;
+        & h4 {
+            font-weight: 900;
+        }
+        & p {
+            width: 100%;
+            display: flex;
+            justify-content: space-between;
+        }
+        & span {
+            font-weight: 900;
+        }
+    }
+    .articleH3Choise__content__anim {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        overflow: hidden;
+        @include two-bottom-rouned-corners-right;
+        background-color: $tertiaire;
+        width: 0px;
+        transition-property:width;
+        transition-duration: 2s;
+         .fa-check {
+            padding: 5px;
+            border-radius: 50px;
+            color: #99e1cf;
+            background-color: white;   
+        } 
+    }
+    .articleH3Choise__content:hover + .articleH3Choise__content__anim {
+        width: 80px;
+    }  
+   
 }
