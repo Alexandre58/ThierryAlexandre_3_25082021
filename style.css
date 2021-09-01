@@ -1,4 +1,5 @@
 @import url("https://fonts.googleapis.com/css2?family=Shrikhand&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Roboto&display=swap");
 /*! minireset.css v0.0.6 | MIT License | github.com/jgthms/minireset.css */
 html, body, p, ol, ul, li, dl, dt, dd, blockquote, figure, fieldset, legend, textarea, pre, iframe, hr, h1, h2, h3, h4, h5, h6 {
   margin: 0;
@@ -247,6 +248,11 @@ body {
   color: #9356dc;
 }
 
+@media screen and (min-width: 780px) {
+  .navH3Choise h3, .sectionH3Card h3 {
+    text-align: center;
+  }
+}
 /*************************************FOOTER**********************************************/
 .footer__container {
   width: 100%;
@@ -265,7 +271,7 @@ body {
   column-gap: 10px;
 }
 .footer__container .footer__content p {
-  font-size: 12px;
+  font-size: 15px;
   font-weight: normal !important;
   padding: 5px;
 }
@@ -275,7 +281,6 @@ body {
   max-width: 1400px;
   font-family: "Shrikhand", cursive;
   padding: 10px 0;
-  font-weight: 400;
 }
 .footer__container a {
   color: white;
@@ -388,14 +393,28 @@ body {
   transition-property: width;
   transition-duration: 2s;
 }
-.articleH3Choise__container .articleH3Choise__content__anim .fa-check {
+.articleH3Choise__container .articleH3Choise__content:hover + .articleH3Choise__content__anim {
+  width: 80px;
+}
+
+.fa-check {
   padding: 5px;
   border-radius: 50px;
   color: #99e1cf;
   background-color: white;
+  /*anim*/
+  display: inline-block;
+  animation: roll 2s ease-in;
+  transform: rotate(-360deg);
 }
-.articleH3Choise__container .articleH3Choise__content:hover + .articleH3Choise__content__anim {
-  width: 80px;
+
+@keyframes roll {
+  to {
+    transform: rotate(0);
+  }
+  from {
+    transform: rotate(360%);
+  }
 }
 
 /*# sourceMappingURL=style.css.map */
