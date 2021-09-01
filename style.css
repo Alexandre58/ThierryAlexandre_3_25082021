@@ -289,12 +289,15 @@ body {
 .footer__container p:hover,
 .footer__container p a:hover {
   color: #99e2d0;
-  font-size: 13px;
 }
 @media screen and (min-width: 780px) {
   .footer__container .footer__content {
     display: flex;
     justify-content: space-around;
+  }
+  .footer__container h5 {
+    text-align: center;
+    padding: 10px;
   }
 }
 
@@ -314,13 +317,16 @@ body {
 }
 
 .section__h2 {
+  position: absolute;
   display: flex;
   justify-content: space-between;
+  border-radius: 20px 20px 0 0;
+  background-color: white;
   max-width: 800px;
   position: relative;
   width: 100%;
-  margin: 40px auto;
-  padding: 10px;
+  margin: -30px auto 40px auto;
+  padding: 40px;
   text-align: center;
 }
 .section__h2 h2 {
@@ -332,11 +338,11 @@ body {
 .section__h2 .section__heart {
   position: absolute;
   align-self: flex-end;
-  right: 10px;
-  align-self: center;
+  right: 8px;
   color: black;
-  font-size: 34px;
+  font-size: 37px;
   font-weight: bolder;
+  align-self: center;
 }
 .section__h2 .section__heart2 {
   position: absolute;
@@ -353,6 +359,20 @@ body {
   color: #9356dc;
 }
 
+@media screen and (max-width: 780px) {
+  .section__h2 {
+    display: flex;
+    flex-direction: column;
+  }
+  .section__h2 .section__heart {
+    top: 78px;
+    right: 10px;
+  }
+  .section__h2 .section__heart2 {
+    top: 80px;
+    right: 14px;
+  }
+}
 .articleH3Choise__container {
   display: flex;
   box-shadow: 0px 0px 37px -3px rgba(0, 0, 0, 0.3);
@@ -360,6 +380,9 @@ body {
   width: 95%;
   max-width: 800px;
   margin: auto;
+  background-color: #99e2d0;
+  overflow: hidden;
+  /*rotation de .fa-check div articleH3Choise__content__anim*/
 }
 .articleH3Choise__container .articleH3Choise__content {
   display: flex;
@@ -373,11 +396,19 @@ body {
 }
 .articleH3Choise__container .articleH3Choise__content h4 {
   font-weight: 900;
+  /*******pour reduire le texte mais ne fonctionne pas *****************/
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  overflow: hidden;
 }
 .articleH3Choise__container .articleH3Choise__content p {
   width: 100%;
   display: flex;
   justify-content: space-between;
+  /*******pour reduire le texte mais ne fonctionne pas *****************/
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  overflow: hidden;
 }
 .articleH3Choise__container .articleH3Choise__content span {
   font-weight: 900;
@@ -388,31 +419,29 @@ body {
   align-items: center;
   overflow: hidden;
   border-radius: 0px 10px 10px 0;
-  background-color: #99e2d0;
+  background-color: transparent;
   width: 0px;
+  /*transition etirement de la div sur hover***********************************************/
   transition-property: width;
-  transition-duration: 2s;
+  transition-duration: 1s;
 }
 .articleH3Choise__container .articleH3Choise__content:hover + .articleH3Choise__content__anim {
+  /*transition ***********************************************/
   width: 80px;
+  animation: roll 1s cubic-bezier(0.25, 0.46, 0.45, 0.94) both;
+  transform: rotate(360deg);
 }
-
-.fa-check {
+.articleH3Choise__container .fa-check {
   padding: 5px;
   border-radius: 50px;
-  color: #99e1cf;
   background-color: white;
-  /*anim*/
-  display: inline-block;
-  animation: roll 2s ease-in;
-  transform: rotate(-360deg);
+  color: #99e1cf;
 }
-
 @keyframes roll {
-  to {
+  0% {
     transform: rotate(0);
   }
-  from {
+  100% {
     transform: rotate(360%);
   }
 }
