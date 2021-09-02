@@ -2,7 +2,10 @@
     border-radius: 20px;   
 }
 @mixin  two-bottom-rouned-corners {
-    border-radius: 20px 20px 0 0;
+    border-radius: 30px 30px 0 0;
+}
+@mixin  two-bottom-rouned-corners2 {
+    border-radius: 50px 40px 0 0;
 }
 @mixin  two-bottom-rouned-corners-right {
     border-radius: 0px 10px 10px 0;
@@ -14,5 +17,18 @@
     border-radius: 50px;  
 }
 @mixin shadow {
-    box-shadow: 0px 0px 37px -3px rgba(0,0,0,0.30);
+    box-shadow: 0px 4px 20px -5px rgba(0,0,0,0.30);
+}
+@mixin bouton {
+    @include border-rounded;
+    background-color: $primaire;
+    background: linear-gradient(150deg, #e07cc4 10%, #9c70d3 95%);
+    @include shadow;
+    border: none;
+    color: white;
+    font-size: 1rem;
+    padding: 15px 20px;
+    &:hover {
+        box-shadow: 0 0 2px black;
+    }
 }
