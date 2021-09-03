@@ -2,6 +2,8 @@
 @import url('https://fonts.googleapis.com/css2?family=Roboto&display=swap');
 @import "libs/reset.scss";
 @import "libs/mixins.scss";
+$size10 :10px;
+$size30 : 30px;
 $primaire: #9356dc;
 $secondaire: #ff79da;
 $tertiaire: #99e2d0;
@@ -35,7 +37,7 @@ body {
         align-items: center;
         column-gap: 3%;
         background: rgb(234,234,234);
-        background: linear-gradient(0deg, rgba(234,234,234,1) 80%, rgba(161, 237, 238,1) 100%);
+        background: linear-gradient(0deg, #ebe9e9 80%, #d4d4d4 100%);
         width: 100%;
         max-width: 1400px;
         padding: 15px 0;
@@ -44,6 +46,23 @@ body {
         }
         .fa-map-marker-alt {
             font-size: 13px;
+        }
+        .fa-map-marker-alt:hover {
+            font-size: 15px;
+        }
+        & ::placeholder { 
+            background-color: #ebe9e9;
+            border-style: none;
+            color: black;
+            font-weight: 700;
+            text-align: center;
+        }
+        #name {
+            background-color: #ebe9e9;
+            border-style: none;
+        }
+        #name:hover {
+            background-color:#9b9999 ;
         }
     }
     .header__content {
@@ -66,7 +85,6 @@ body {
 .main__container {
     margin: auto;
     max-width: 1440px;
-
 }
 /******************SECTION SECTION H3 AND FONCTIONNEMENT /CHOISE /RESTAURANTS/MENU/DEGUSTEZ**********/
 .navH3Choise, .articleH3Choise {
@@ -91,6 +109,8 @@ body {
         text-align: center;
         font-weight: 700;
         padding: 10px 0;
+        transition: transform 1s;
+        transform: scale(1);
         & .number_circle {
             position: absolute;
             background-color: $primaire;
@@ -112,9 +132,13 @@ body {
             color:#7e7e7e;
         }
         & :hover .fas {
-            color:$primaire
+            color:$primaire; 
         }
     }  
+}
+.navH3Choise__content:hover {
+    transform: scale(1.02);
+
 }
 /**********************************SECTION ARTICLES H3 AND CARD*****************************/
 .sectionH3Card {
@@ -136,7 +160,7 @@ body {
         justify-content: space-around;
         padding: 0 20px 33px 20px;
         .card {
-            @include four-rounded-corners;
+            border-radius: 20px;
             @include shadow;
             background-color: white;
         }
@@ -188,10 +212,9 @@ body {
             text-align: center;
     }
     .sectionH3Card {
-        @include four-rounded-corners;
+       @include rounded20();
         margin-bottom: 50px;
-    }
-        
+    }        
 }
 
 /*************************************FOOTER**********************************************/
@@ -246,20 +269,25 @@ body {
 }
 /*************PAGE LA PALETTE DU GOUT***************************/
 .main__paletteDuGout__container {
+    width: 100%;
+    max-width: 1990px;
+    margin: auto;
+
         & container__img {
             object-fit: cover;
+
         }
     }
     .header__container_image {
         position: relative;
         .fa-arrow-left {
             position: absolute;
-            font-size:1.5rem;
-            margin: 20px;
-            max-height: 50px;
+            font-size:1rem;
+            margin: 18px 0 0 10px;
+          
         }
     }
-.section { 
+
     .section__h2 {
             display: flex;
             justify-content: space-between;
@@ -284,23 +312,20 @@ body {
                 font-size: 37px;
                 font-weight: bolder;
                 align-self: center;
-
-            
             }
             .section__heart2 {
                 position: absolute;
                 right: 52px;
                 align-self: center;
                 color: #fff;
-                font-size: 29px;
-            
+                font-size: 29px;        
             }
             .section__heart2::before {
                 font-weight: bold;
                 transition: color 1s ease-out;
             }
             .section__heart2:hover::before {
-                color: $primaire;
+                color: #b260db;;
             }
     }
     @media screen and (max-width:780px) {
@@ -322,8 +347,15 @@ body {
     @media screen and (min-width:980px) {
         .section__h2 {
             @include two-bottom-rouned-corners2;
-
          }
+    }
+    @media screen and (min-width:780px) {
+        .header__container_image {   
+            .fa-arrow-left {
+                font-size:2rem;
+                margin: 30px 0 0 10px;
+            }
+        }
     }
     /**********************************ARTICLES****************/
     .articleH3Choise h3 {
@@ -338,7 +370,38 @@ body {
         height: 3px;
         width: 15%;
     }
+    /*********************************POUR BOUCLE FOR ENTREE/PLATS/DESSERTS***********/
     .articleH3Choise__container {
+        animation: slide  both;
+        animation-duration:3000ms;
+        animation-delay:0ms;
+        margin-top: 20px;
+        opacity: 0;
+    }
+    @keyframes slide {
+        0% {
+            margin-top: 25px;
+            opacity: 0;
+        }
+        30% {
+            opacity: 0.3;
+        }
+        30% {
+            opacity: 0.3;
+        }
+        100% {
+            margin-top: 20px;
+            opacity: 1;
+        }
+        
+    }
+    @for $i from 1 through 9 {
+        #mDelay-#{$i} {
+            animation-delay: $i*300ms;
+        }
+    }
+    /****************************ARTICLES DES ENTREES/PLATS/DESSERTS******************/
+    .articleH3Choise__container a {
         display: flex;
         @include shadow;
         border-radius:10px 10px 10px 10px;
@@ -347,38 +410,7 @@ body {
         margin: auto; 
         background-color:$tertiaire;
         overflow: hidden;
-        animation: slide  both;
-        animation-duration:4000ms;
-        animation-delay:0ms;
-        margin-top: 20px;
-        opacity: 0;
-        & .mDelay-2 {
-            animation: slide  both;
-            animation-duration:4000ms;
-            animation-delay:2000ms;
-        }
-        & .mDelay-3 {
-            animation: slide  both;
-            animation-duration:4000ms;
-            animation-delay:4000ms;
-        }   
-        @keyframes slide {
-            0% {
-                margin-top: 28px;
-                opacity: 0;
-            }
-            30% {
-                opacity: 0.3;
-            }
-            30% {
-                opacity: 0.3;
-            }
-            100% {
-                margin-top: 20px;
-                opacity: 1;
-            }
-            
-        }
+       
         /*CONTAINER TEXT *******************************/
         .articleH3Choise__content { 
             display: flex;
@@ -389,20 +421,22 @@ body {
             text-align: center;
             width: 100%;
             padding: 10px 10px !important;
-        
-            & h4 {
+            .articleH3Choise__content--h3AndP {    
+                width: 100%;
+            }
+            & h4 {        
                 font-weight: 900;
-             
-                /*******pour reduire le texte mais ne fonctionne pas *****************/
+                padding: 1%;
+                text-align: start; 
                 text-overflow: ellipsis;
                 white-space: nowrap;
                 overflow: hidden;
-                text-align: start;
+                width: 100%;
             }
             & p {
                 width: 100%;
+                padding: 1%;
                 text-align: start;
-                /*******pour reduire le texte mais ne fonctionne pas *****************/
                 text-overflow: ellipsis;
                 white-space: nowrap;
                 overflow: hidden;
@@ -410,11 +444,12 @@ body {
             .articleH3Choise__content--euros {
                 align-self: flex-end;
                 font-weight: 900;
-                width: 30px;
+                min-width: 30px;
+                margin: 0;
             }  
         }
         /********************************************ANIMATION****************************************************************/
-    .articleH3Choise__content__anim {
+     .articleH3Choise__content__anim {
             display: flex;
             justify-content: center;
             align-items: center;
@@ -456,8 +491,7 @@ body {
              @include bouton;
              margin: 40px auto;    
              padding: 15px 50px;
-         }
+         }  
     }
-}
 
 

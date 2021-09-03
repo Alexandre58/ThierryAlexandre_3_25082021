@@ -89,7 +89,7 @@ body {
   align-items: center;
   column-gap: 3%;
   background: #eaeaea;
-  background: linear-gradient(0deg, #eaeaea 80%, #a1edee 100%);
+  background: linear-gradient(0deg, #ebe9e9 80%, #d4d4d4 100%);
   width: 100%;
   max-width: 1400px;
   padding: 15px 0;
@@ -99,6 +99,23 @@ body {
 }
 .header__container .header__localisation .fa-map-marker-alt {
   font-size: 13px;
+}
+.header__container .header__localisation .fa-map-marker-alt:hover {
+  font-size: 15px;
+}
+.header__container .header__localisation ::placeholder {
+  background-color: #ebe9e9;
+  border-style: none;
+  color: black;
+  font-weight: 700;
+  text-align: center;
+}
+.header__container .header__localisation #name {
+  background-color: #ebe9e9;
+  border-style: none;
+}
+.header__container .header__localisation #name:hover {
+  background-color: #9b9999;
 }
 .header__container .header__content {
   display: flex;
@@ -122,7 +139,7 @@ body {
   margin: 0 0 50px 0;
 }
 .header__container .header__button:hover {
-  box-shadow: 0 0 2px black;
+  box-shadow: 0 0px 4px black;
 }
 
 /**************************MAIN CONTAINER SECTIONH3CHOISE AND SECTIONH3CARD**********************/
@@ -155,6 +172,8 @@ body {
   text-align: center;
   font-weight: 700;
   padding: 10px 0;
+  transition: transform 1s;
+  transform: scale(1);
 }
 .navH3Choise .navH3Choise__content .number_circle, .articleH3Choise .navH3Choise__content .number_circle {
   position: absolute;
@@ -180,6 +199,10 @@ body {
 }
 .navH3Choise .navH3Choise__content :hover .fas, .articleH3Choise .navH3Choise__content :hover .fas {
   color: #9356dc;
+}
+
+.navH3Choise__content:hover {
+  transform: scale(1.02);
 }
 
 /**********************************SECTION ARTICLES H3 AND CARD*****************************/
@@ -213,7 +236,7 @@ body {
 }
 .sectionH3Card .container__articles .card__image {
   object-fit: cover;
-  border-radius: 30px 30px 0 0;
+  border-radius: 20px 20px 0 0;
 }
 .sectionH3Card .container__articles .card__content {
   display: flex;
@@ -309,6 +332,11 @@ body {
 }
 
 /*************PAGE LA PALETTE DU GOUT***************************/
+.main__paletteDuGout__container {
+  width: 100%;
+  max-width: 1990px;
+  margin: auto;
+}
 .main__paletteDuGout__container container__img {
   object-fit: cover;
 }
@@ -318,18 +346,14 @@ body {
 }
 .header__container_image .fa-arrow-left {
   position: absolute;
-  font-size: 1.5rem;
-  margin: 20px;
-  max-height: 50px;
+  font-size: 1rem;
+  margin: 18px 0 0 10px;
 }
 
-.section {
-  /**********************************ARTICLES****************/
-}
-.section .section__h2 {
+.section__h2 {
   display: flex;
   justify-content: space-between;
-  border-radius: 30px 30px 0 0;
+  border-radius: 20px 20px 0 0;
   background-color: white;
   position: relative;
   width: 100%;
@@ -337,13 +361,13 @@ body {
   padding: 40px;
   text-align: center;
 }
-.section .section__h2 h2 {
+.section__h2 h2 {
   font-weight: bold;
   font-family: "Shrikhand", cursive;
   font-style: italic;
   font-size: 30px;
 }
-.section .section__h2 .section__heart {
+.section__h2 .section__heart {
   position: absolute;
   align-self: flex-end;
   right: 48px;
@@ -352,84 +376,75 @@ body {
   font-weight: bolder;
   align-self: center;
 }
-.section .section__h2 .section__heart2 {
+.section__h2 .section__heart2 {
   position: absolute;
   right: 52px;
   align-self: center;
   color: #fff;
   font-size: 29px;
 }
-.section .section__h2 .section__heart2::before {
+.section__h2 .section__heart2::before {
   font-weight: bold;
   transition: color 1s ease-out;
 }
-.section .section__h2 .section__heart2:hover::before {
-  color: #9356dc;
+.section__h2 .section__heart2:hover::before {
+  color: #b260db;
 }
+
 @media screen and (max-width: 780px) {
-  .section .section__h2 {
+  .section__h2 {
     padding: 30px 10px;
   }
-  .section .section__h2 h2 {
+  .section__h2 h2 {
     font-size: 21px;
   }
-  .section .section__h2 .section__heart {
+  .section__h2 .section__heart {
     right: 8px;
     font-size: 25px;
   }
-  .section .section__h2 .section__heart2 {
+  .section__h2 .section__heart2 {
     right: 12px;
     font-size: 19px;
   }
 }
 @media screen and (min-width: 980px) {
-  .section .section__h2 {
+  .section__h2 {
     border-radius: 50px 40px 0 0;
   }
 }
-.section .articleH3Choise h3 {
+@media screen and (min-width: 780px) {
+  .header__container_image .fa-arrow-left {
+    font-size: 2rem;
+    margin: 30px 0 0 10px;
+  }
+}
+/**********************************ARTICLES****************/
+.articleH3Choise h3 {
   color: #99e2d0;
   display: inline;
   font-weight: normal;
 }
-.section .articleH3Choise h3::after {
+
+.articleH3Choise h3::after {
   content: "";
   display: block;
   background-color: #99e2d0;
   height: 3px;
   width: 15%;
 }
-.section .articleH3Choise__container {
-  display: flex;
-  box-shadow: 0px 4px 20px -5px rgba(0, 0, 0, 0.3);
-  border-radius: 10px 10px 10px 10px;
-  width: 95%;
-  max-width: 800px;
-  margin: auto;
-  background-color: #99e2d0;
-  overflow: hidden;
+
+/*********************************POUR BOUCLE FOR ENTREE/PLATS/DESSERTS***********/
+.articleH3Choise__container {
   animation: slide both;
-  animation-duration: 4000ms;
+  animation-duration: 3000ms;
   animation-delay: 0ms;
   margin-top: 20px;
   opacity: 0;
-  /*CONTAINER TEXT *******************************/
-  /********************************************ANIMATION****************************************************************/
-  /*rotation de .fa-check div articleH3Choise__content__anim*/
 }
-.section .articleH3Choise__container .mDelay-2 {
-  animation: slide both;
-  animation-duration: 4000ms;
-  animation-delay: 2000ms;
-}
-.section .articleH3Choise__container .mDelay-3 {
-  animation: slide both;
-  animation-duration: 4000ms;
-  animation-delay: 4000ms;
-}
+
 @keyframes slide {
   0% {
-    margin-top: 28px;
+    margin-top: 25px;
     opacity: 0;
   }
   30% {
@@ -443,7 +458,57 @@ body {
     opacity: 1;
   }
 }
-.section .articleH3Choise__container .articleH3Choise__content {
+#mDelay-1 {
+  animation-delay: 300ms;
+}
+
+#mDelay-2 {
+  animation-delay: 600ms;
+}
+
+#mDelay-3 {
+  animation-delay: 900ms;
+}
+
+#mDelay-4 {
+  animation-delay: 1200ms;
+}
+
+#mDelay-5 {
+  animation-delay: 1500ms;
+}
+
+#mDelay-6 {
+  animation-delay: 1800ms;
+}
+
+#mDelay-7 {
+  animation-delay: 2100ms;
+}
+
+#mDelay-8 {
+  animation-delay: 2400ms;
+}
+
+#mDelay-9 {
+  animation-delay: 2700ms;
+}
+
+/****************************ARTICLES DES ENTREES/PLATS/DESSERTS******************/
+.articleH3Choise__container a {
+  display: flex;
+  box-shadow: 0px 4px 20px -5px rgba(0, 0, 0, 0.3);
+  border-radius: 10px 10px 10px 10px;
+  width: 95%;
+  max-width: 800px;
+  margin: auto;
+  background-color: #99e2d0;
+  overflow: hidden;
+  /*CONTAINER TEXT *******************************/
+  /********************************************ANIMATION****************************************************************/
+  /*rotation de .fa-check div articleH3Choise__content__anim*/
+}
+.articleH3Choise__container a .articleH3Choise__content {
   display: flex;
   justify-content: space-between;
   align-items: flex-start;
@@ -453,28 +518,33 @@ body {
   width: 100%;
   padding: 10px 10px !important;
 }
-.section .articleH3Choise__container .articleH3Choise__content h4 {
-  font-weight: 900;
-  /*******pour reduire le texte mais ne fonctionne pas *****************/
-  text-overflow: ellipsis;
-  white-space: nowrap;
-  overflow: hidden;
-  text-align: start;
-}
-.section .articleH3Choise__container .articleH3Choise__content p {
+.articleH3Choise__container a .articleH3Choise__content .articleH3Choise__content--h3AndP {
   width: 100%;
+}
+.articleH3Choise__container a .articleH3Choise__content h4 {
+  font-weight: 900;
+  padding: 1%;
   text-align: start;
-  /*******pour reduire le texte mais ne fonctionne pas *****************/
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  overflow: hidden;
+  width: 100%;
+}
+.articleH3Choise__container a .articleH3Choise__content p {
+  width: 100%;
+  padding: 1%;
+  text-align: start;
   text-overflow: ellipsis;
   white-space: nowrap;
   overflow: hidden;
 }
-.section .articleH3Choise__container .articleH3Choise__content .articleH3Choise__content--euros {
+.articleH3Choise__container a .articleH3Choise__content .articleH3Choise__content--euros {
   align-self: flex-end;
   font-weight: 900;
-  width: 30px;
+  min-width: 30px;
+  margin: 0;
 }
-.section .articleH3Choise__container .articleH3Choise__content__anim {
+.articleH3Choise__container a .articleH3Choise__content__anim {
   display: flex;
   justify-content: center;
   align-items: center;
@@ -486,13 +556,13 @@ body {
   transition-property: width;
   transition-duration: 1s;
 }
-.section .articleH3Choise__container .articleH3Choise__content:hover + .articleH3Choise__content__anim {
+.articleH3Choise__container a .articleH3Choise__content:hover + .articleH3Choise__content__anim {
   /*transition ***********************************************/
   width: 80px;
   animation: roll 1s cubic-bezier(0.25, 0.46, 0.45, 0.94) both;
   transform: rotate(360deg);
 }
-.section .articleH3Choise__container .fa-check {
+.articleH3Choise__container a .fa-check {
   padding: 5px;
   border-radius: 50px;
   background-color: white;
@@ -506,12 +576,13 @@ body {
     transform: rotate(360%);
   }
 }
-.section .section__button {
+
+.section__button {
   width: 100%;
   display: flex;
   justify-content: center;
 }
-.section .section__button .section__button--commander {
+.section__button .section__button--commander {
   border-radius: 50px;
   background-color: #9356dc;
   background: linear-gradient(150deg, #e07cc4 10%, #9c70d3 95%);
@@ -523,8 +594,8 @@ body {
   margin: 40px auto;
   padding: 15px 50px;
 }
-.section .section__button .section__button--commander:hover {
-  box-shadow: 0 0 2px black;
+.section__button .section__button--commander:hover {
+  box-shadow: 0 0px 4px black;
 }
 
 /*# sourceMappingURL=style.css.map */
