@@ -1,9 +1,9 @@
-@import url('https://fonts.googleapis.com/css2?family=Shrikhand&display=swap');
-@import url('https://fonts.googleapis.com/css2?family=Roboto&display=swap');
+@import url("https://fonts.googleapis.com/css2?family=Shrikhand&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Roboto&display=swap");
 @import "libs/reset.scss";
 @import "libs/mixins.scss";
-$size10 :10px;
-$size30 : 30px;
+$size10: 10px;
+$size30: 30px;
 $primaire: #9356dc;
 $secondaire: #ff79da;
 $tertiaire: #99e2d0;
@@ -13,7 +13,6 @@ body {
     box-sizing: border-box;
     font-family: "Roboto", sans-serif;
 }
-
 /************************HEADER CONTAINER/LOGO/TITRE/EXPLORER RESTAURANTS***********************/
 .header__container {
     display: flex;
@@ -21,7 +20,8 @@ body {
     background-color: #f6f6f6;
     align-items: center;
     width: 100%;
-    .header__container_image {       
+    @include shadowMain;
+    .header__container_image {
         width: 100%;
         background-color: white;
     }
@@ -36,7 +36,7 @@ body {
         justify-content: center;
         align-items: center;
         column-gap: 3%;
-        background: rgb(234,234,234);
+        background: rgb(234, 234, 234);
         background: linear-gradient(0deg, #ebe9e9 80%, #d4d4d4 100%);
         width: 100%;
         max-width: 1400px;
@@ -50,7 +50,7 @@ body {
         .fa-map-marker-alt:hover {
             font-size: 15px;
         }
-        & ::placeholder { 
+        & ::placeholder {
             background-color: #ebe9e9;
             border-style: none;
             color: black;
@@ -62,7 +62,7 @@ body {
             border-style: none;
         }
         #name:hover {
-            background-color:#9b9999 ;
+            background-color: #9b9999;
         }
     }
     .header__content {
@@ -79,7 +79,6 @@ body {
         @include bouton;
         margin: 0 0 50px 0;
     }
-  
 }
 /**************************MAIN CONTAINER SECTIONH3CHOISE AND SECTIONH3CARD**********************/
 .main__container {
@@ -87,7 +86,8 @@ body {
     max-width: 1440px;
 }
 /******************SECTION SECTION H3 AND FONCTIONNEMENT /CHOISE /RESTAURANTS/MENU/DEGUSTEZ**********/
-.navH3Choise, .articleH3Choise {
+.navH3Choise,
+.articleH3Choise {
     display: flex;
     flex-direction: column;
     row-gap: 18px;
@@ -129,16 +129,15 @@ body {
         .fa-mobile-alt,
         .fa-list-ul,
         .fa-store {
-            color:#7e7e7e;
+            color: #7e7e7e;
         }
         & :hover .fas {
-            color:$primaire; 
+            color: $primaire;
         }
-    }  
+    }
 }
 .navH3Choise__content:hover {
     transform: scale(1.02);
-
 }
 /**********************************SECTION ARTICLES H3 AND CARD*****************************/
 .sectionH3Card {
@@ -207,16 +206,16 @@ body {
         }
     }
 }
-@media screen and (min-width:780px) {
-    .navH3Choise h3, .sectionH3Card h3 {        
-            text-align: center;
+@media screen and (min-width: 780px) {
+    .navH3Choise h3,
+    .sectionH3Card h3 {
+        text-align: center;
     }
     .sectionH3Card {
-       @include rounded20();
+        @include rounded20();
         margin-bottom: 50px;
-    }        
+    }
 }
-
 /*************************************FOOTER**********************************************/
 .footer__container {
     width: 100%;
@@ -244,19 +243,16 @@ body {
         max-width: 1400px;
         font-family: "Shrikhand", cursive;
         padding: 10px 0;
-        
-
     }
     & a {
         color: white;
         padding: 0;
     }
     & p:hover,
-      p a:hover {
+    p a:hover {
         color: $tertiaire;
-        
     }
-    @media screen and (min-width:780px) {
+    @media screen and (min-width: 780px) {
         .footer__content {
             display: flex;
             justify-content: space-around;
@@ -270,228 +266,222 @@ body {
 /*************PAGE LA PALETTE DU GOUT***************************/
 .main__paletteDuGout__container {
     width: 100%;
-    max-width: 1990px;
+    max-width: 1440px;
     margin: auto;
-
-        & container__img {
-            object-fit: cover;
-
-        }
+    @include shadowMain;
+    & container__img {
+        object-fit: cover;
     }
-    .header__container_image {
-        position: relative;
-        .fa-arrow-left {
-            position: absolute;
-            font-size:1rem;
-            margin: 18px 0 0 10px;
-          
-        }
+}
+.header__container_image {
+    position: relative;
+    .fa-arrow-left {
+        position: absolute;
+        font-size: 1rem;
+        margin: 18px 0 0 10px;
     }
-
+}
+.section__h2 {
+    display: flex;
+    justify-content: space-between;
+    @include two-bottom-rouned-corners;
+    background-color: white;
+    position: relative;
+    width: 100%;
+    margin: -40px auto 0px auto;
+    padding: 40px;
+    text-align: center;
+    & h2 {
+        font-weight: bold;
+        font-family: "Shrikhand", cursive;
+        font-style: italic;
+        font-size: 30px;
+    }
+    .section__heart {
+        position: absolute;
+        align-self: flex-end;
+        right: 48px;
+        color: black;
+        font-size: 37px;
+        font-weight: bolder;
+        align-self: center;
+    }
+    .section__heart2 {
+        position: absolute;
+        right: 52px;
+        align-self: center;
+        color: #fff;
+        font-size: 29px;
+    }
+    .section__heart2::before {
+        font-weight: bold;
+        transition: color 1s ease-out;
+    }
+    .section__heart2:hover::before {
+        color: #b260db;
+    }
+}
+@media screen and (max-width: 780px) {
     .section__h2 {
-            display: flex;
-            justify-content: space-between;
-            @include two-bottom-rouned-corners;
-            background-color: white;
-            position: relative;
-            width: 100%;
-            margin: -30px auto 0px auto;
-            padding: 40px;
-            text-align: center;
-            & h2 {
-                font-weight: bold;
-                font-family: "Shrikhand", cursive;
-                font-style: italic;
-                font-size: 30px;                
-            }
-            .section__heart {
-                position: absolute;
-                align-self: flex-end;
-                right: 48px;        
-                color: black;
-                font-size: 37px;
-                font-weight: bolder;
-                align-self: center;
-            }
-            .section__heart2 {
-                position: absolute;
-                right: 52px;
-                align-self: center;
-                color: #fff;
-                font-size: 29px;        
-            }
-            .section__heart2::before {
-                font-weight: bold;
-                transition: color 1s ease-out;
-            }
-            .section__heart2:hover::before {
-                color: #b260db;;
-            }
-    }
-    @media screen and (max-width:780px) {
-        .section__h2 {
-                padding: 30px 10px;
-            & h2 {  
-                font-size: 21px;     
-            }
-            .section__heart {              
-                right: 8px; 
-                font-size: 25px;      
-            }
-            .section__heart2 {        
-                right: 12px;      
-                font-size: 19px;
-            }
-       }
-    }
-    @media screen and (min-width:980px) {
-        .section__h2 {
-            @include two-bottom-rouned-corners2;
-         }
-    }
-    @media screen and (min-width:780px) {
-        .header__container_image {   
-            .fa-arrow-left {
-                font-size:2rem;
-                margin: 30px 0 0 10px;
-            }
+        padding: 30px 10px;
+        & h2 {
+            font-size: 21px;
+        }
+        .section__heart {
+            right: 8px;
+            font-size: 25px;
+        }
+        .section__heart2 {
+            right: 12px;
+            font-size: 19px;
         }
     }
-    /**********************************ARTICLES****************/
-    .articleH3Choise h3 {
-        color: $tertiaire;
-        display: inline;
-        font-weight: normal;
+}
+@media screen and (min-width: 980px) {
+    .section__h2 {
+        @include two-bottom-rouned-corners2;
     }
-    .articleH3Choise h3::after {
-        content:"";
-        display: block;
-        background-color: $tertiaire;
-        height: 3px;
-        width: 15%;
+}
+@media screen and (min-width: 780px) {
+    .header__container_image {
+        .fa-arrow-left {
+            font-size: 2rem;
+            margin: 30px 0 0 10px;
+        }
     }
-    /*********************************POUR BOUCLE FOR ENTREE/PLATS/DESSERTS***********/
-    .articleH3Choise__container {
-        animation: slide  both;
-        animation-duration:3000ms;
-        animation-delay:0ms;
-        margin-top: 20px;
+}
+/**********************************ARTICLES****************/
+.articleH3Choise h3 {
+    color: $tertiaire;
+    display: inline;
+    font-weight: normal;
+}
+.articleH3Choise h3::after {
+    content: "";
+    display: block;
+    background-color: $tertiaire;
+    height: 3px;
+    width: 15%;
+}
+/*********************************POUR BOUCLE FOR ENTREE/PLATS/DESSERTS***********/
+.articleH3Choise__container {
+    animation: slide both;
+    animation-duration: 3000ms;
+    animation-delay: 0ms;
+    margin-top: 20px;
+    opacity: 0;
+}
+@keyframes slide {
+    0% {
+        margin-top: 25px;
         opacity: 0;
     }
-    @keyframes slide {
-        0% {
-            margin-top: 25px;
-            opacity: 0;
-        }
-        30% {
-            opacity: 0.3;
-        }
-        30% {
-            opacity: 0.3;
-        }
-        100% {
-            margin-top: 20px;
-            opacity: 1;
-        }
-        
+    30% {
+        opacity: 0.3;
     }
-    @for $i from 1 through 9 {
-        #mDelay-#{$i} {
-            animation-delay: $i*300ms;
-        }
+    30% {
+        opacity: 0.3;
     }
-    /****************************ARTICLES DES ENTREES/PLATS/DESSERTS******************/
-    .articleH3Choise__container a {
+    100% {
+        margin-top: 20px;
+        opacity: 1;
+    }
+}
+@for $i from 1 through 9 {
+    #mDelay-#{$i} {
+        animation-delay: $i * 300ms;
+    }
+}
+/****************************ARTICLES DES ENTREES/PLATS/DESSERTS******************/
+.articleH3Choise__container a {
+    display: flex;
+    @include shadow;
+    border-radius: 10px 10px 10px 10px;
+    width: 95%;
+    max-width: 800px;
+    margin: auto;
+    background-color: $tertiaire;
+    overflow: hidden;
+
+    /*CONTAINER TEXT *******************************/
+    .articleH3Choise__content {
         display: flex;
-        @include shadow;
-        border-radius:10px 10px 10px 10px;
-        width: 95%;
-        max-width: 800px;
-        margin: auto; 
-        background-color:$tertiaire;
-        overflow: hidden;
-       
-        /*CONTAINER TEXT *******************************/
-        .articleH3Choise__content { 
-            display: flex;
-            justify-content: space-between;
-            align-items: flex-start;
-            @include two-bottom-rouned-corners-left;  
-            background-color: #ece3e3;
-            text-align: center;
+        justify-content: space-between;
+        align-items: flex-start;
+        @include two-bottom-rouned-corners-left;
+        background-color: #ece3e3;
+        text-align: center;
+        width: 100%;
+        padding: 10px 10px !important;
+        .articleH3Choise__content--h3AndP {
             width: 100%;
-            padding: 10px 10px !important;
-            .articleH3Choise__content--h3AndP {    
-                width: 100%;
-            }
-            & h4 {        
-                font-weight: 900;
-                padding: 1%;
-                text-align: start; 
-                text-overflow: ellipsis;
-                white-space: nowrap;
-                overflow: hidden;
-                width: 100%;
-            }
-            & p {
-                width: 100%;
-                padding: 1%;
-                text-align: start;
-                text-overflow: ellipsis;
-                white-space: nowrap;
-                overflow: hidden;
-            }
-            .articleH3Choise__content--euros {
-                align-self: flex-end;
-                font-weight: 900;
-                min-width: 30px;
-                margin: 0;
-            }  
         }
-        /********************************************ANIMATION****************************************************************/
-     .articleH3Choise__content__anim {
-            display: flex;
-            justify-content: center;
-            align-items: center;
+        & h4 {
+            font-weight: 900;
+            padding: 1%;
+            text-align: start;
+            text-overflow: ellipsis;
+            white-space: nowrap;
             overflow: hidden;
-            @include two-bottom-rouned-corners-right;
-            background-color:transparent;
-            width: 0px;
-            /*transition etirement de la div sur hover***********************************************/
-            transition-property:width;
-            transition-duration: 1s;
+            width: 100%;
         }
-        .articleH3Choise__content:hover + .articleH3Choise__content__anim {
-            /*transition ***********************************************/
-            width: 80px;
-            animation: roll 1s cubic-bezier(.25,.46,.45,.94)both;
-            transform: rotate(360deg);
-        } 
-        .fa-check {
-            padding: 5px;
-            border-radius: 50px;
-            background-color: white;
-            color: #99e1cf; 
-        } 
-        /*rotation de .fa-check div articleH3Choise__content__anim*/
-        @keyframes roll {
-            0% {
-                transform: rotate(0);
-            }
-            100% {
-                transform: rotate(360%);
-            }   
+        & p {
+            width: 100%;
+            padding: 1%;
+            text-align: start;
+            text-overflow: ellipsis;
+            white-space: nowrap;
+            overflow: hidden;
+        }
+        .articleH3Choise__content--euros {
+            align-self: flex-end;
+            font-weight: 900;
+            min-width: 30px;
+            margin: 0;
         }
     }
-    .section__button {
-        width: 100%;
+    /********************************************ANIMATION****************************************************************/
+    .articleH3Choise__content__anim {
         display: flex;
         justify-content: center;
-        .section__button--commander {
-             @include bouton;
-             margin: 40px auto;    
-             padding: 15px 50px;
-         }  
+        align-items: center;
+        overflow: hidden;
+        @include two-bottom-rouned-corners-right;
+        background-color: transparent;
+        width: 0px;
+        /*transition etirement de la div sur hover***********************************************/
+        transition-property: width;
+        transition-duration: 1s;
     }
-
-
+    .articleH3Choise__content:hover + .articleH3Choise__content__anim {
+        /*transition ***********************************************/
+        width: 80px;
+        animation: roll 1s cubic-bezier(0.25, 0.46, 0.45, 0.94) both;
+        transform: rotate(360deg);
+    }
+    .fa-check {
+        padding: 5px;
+        border-radius: 50px;
+        background-color: white;
+        color: #99e1cf;
+    }
+    /*rotation de .fa-check div articleH3Choise__content__anim*/
+    @keyframes roll {
+        0% {
+            transform: rotate(0);
+        }
+        100% {
+            transform: rotate(360%);
+        }
+    }
+}
+.section__button {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    .section__button--commander {
+        @include bouton;
+        margin: 40px auto;
+        padding: 15px 50px;
+    }
+}

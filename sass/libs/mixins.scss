@@ -19,6 +19,9 @@
 @mixin shadow {
     box-shadow: 0px 4px 20px -5px rgba(0,0,0,0.30);
 }
+@mixin shadowMain {
+    box-shadow: 0px 4px 30px -5px rgba(0,0,0,0.30);
+}
 @mixin bouton {
     @include border-rounded;
     background-color: $primaire;

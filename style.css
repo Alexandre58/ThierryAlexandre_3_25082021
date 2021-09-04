@@ -72,6 +72,7 @@ body {
   background-color: #f6f6f6;
   align-items: center;
   width: 100%;
+  box-shadow: 0px 4px 30px -5px rgba(0, 0, 0, 0.3);
 }
 .header__container .header__container_image {
   width: 100%;
@@ -149,19 +150,22 @@ body {
 }
 
 /******************SECTION SECTION H3 AND FONCTIONNEMENT /CHOISE /RESTAURANTS/MENU/DEGUSTEZ**********/
-.navH3Choise, .articleH3Choise {
+.navH3Choise,
+.articleH3Choise {
   display: flex;
   flex-direction: column;
   row-gap: 18px;
   padding: 15px 15px 60px 15px;
 }
-.navH3Choise h3, .articleH3Choise h3 {
+.navH3Choise h3,
+.articleH3Choise h3 {
   font-weight: 900;
   max-width: 330px;
   width: 100%;
   margin: auto;
 }
-.navH3Choise .navH3Choise__content, .articleH3Choise .navH3Choise__content {
+.navH3Choise .navH3Choise__content,
+.articleH3Choise .navH3Choise__content {
   position: relative;
   box-shadow: 0px 4px 20px -5px rgba(0, 0, 0, 0.3);
   border-radius: 20px;
@@ -175,7 +179,8 @@ body {
   transition: transform 1s;
   transform: scale(1);
 }
-.navH3Choise .navH3Choise__content .number_circle, .articleH3Choise .navH3Choise__content .number_circle {
+.navH3Choise .navH3Choise__content .number_circle,
+.articleH3Choise .navH3Choise__content .number_circle {
   position: absolute;
   background-color: #9356dc;
   border-radius: 50%;
@@ -186,18 +191,21 @@ body {
   left: 0%;
   transform: translate(-50%, -50%);
 }
-.navH3Choise .navH3Choise__content .fas, .articleH3Choise .navH3Choise__content .fas {
+.navH3Choise .navH3Choise__content .fas,
+.articleH3Choise .navH3Choise__content .fas {
   padding-right: 10%;
   margin-left: 15px;
 }
 .navH3Choise .navH3Choise__content .fa-mobile-alt,
 .navH3Choise .navH3Choise__content .fa-list-ul,
-.navH3Choise .navH3Choise__content .fa-store, .articleH3Choise .navH3Choise__content .fa-mobile-alt,
+.navH3Choise .navH3Choise__content .fa-store,
+.articleH3Choise .navH3Choise__content .fa-mobile-alt,
 .articleH3Choise .navH3Choise__content .fa-list-ul,
 .articleH3Choise .navH3Choise__content .fa-store {
   color: #7e7e7e;
 }
-.navH3Choise .navH3Choise__content :hover .fas, .articleH3Choise .navH3Choise__content :hover .fas {
+.navH3Choise .navH3Choise__content :hover .fas,
+.articleH3Choise .navH3Choise__content :hover .fas {
   color: #9356dc;
 }
 
@@ -274,7 +282,8 @@ body {
 }
 
 @media screen and (min-width: 780px) {
-  .navH3Choise h3, .sectionH3Card h3 {
+  .navH3Choise h3,
+.sectionH3Card h3 {
     text-align: center;
   }
 
@@ -334,8 +343,9 @@ body {
 /*************PAGE LA PALETTE DU GOUT***************************/
 .main__paletteDuGout__container {
   width: 100%;
-  max-width: 1990px;
+  max-width: 1440px;
   margin: auto;
+  box-shadow: 0px 4px 30px -5px rgba(0, 0, 0, 0.3);
 }
 .main__paletteDuGout__container container__img {
   object-fit: cover;
@@ -357,7 +367,7 @@ body {
   background-color: white;
   position: relative;
   width: 100%;
-  margin: -30px auto 0px auto;
+  margin: -40px auto 0px auto;
   padding: 40px;
   text-align: center;
 }
