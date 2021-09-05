@@ -65,6 +65,144 @@ body {
   font-family: "Roboto", sans-serif;
 }
 
+/*LOADING OHMYFOOD*/
+.loader {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: absolute;
+  width: 100%;
+  height: 100vh;
+  background-color: #0e0d0d;
+  /*loader on/off*/
+  visibility: hidden;
+  z-index: 0;
+  opacity: 0;
+  animation: loaderStop 3000ms;
+  /*PLATE ANIMATION*/
+}
+@keyframes loaderStop {
+  0% {
+    visibility: visible;
+    z-index: 15;
+    opacity: 1;
+  }
+  50% {
+    z-index: 15;
+    opacity: 1;
+  }
+  99% {
+    z-index: 15;
+    opacity: 0.9;
+  }
+  100% {
+    visibility: hidden;
+    z-index: 0;
+    opacity: 0;
+  }
+}
+.loader .container__animation {
+  display: flex;
+  column-gap: 10px;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  margin: auto;
+  padding: 0;
+  /*Appearance loader letter*/
+}
+.loader .container__animation .animation__o {
+  border-radius: 50px;
+  width: 70px;
+  height: 71px;
+  margin-right: 0px;
+  animation: bigCircle 1s linear infinite alternate, rotateCircle 3s linear infinite;
+}
+@keyframes bigCircle {
+  from {
+    box-shadow: 0 0 5px #9356dc, 0 5px 5px #ff79da, 5px 0 5px #99e2d0, 0 0 5px whitesmoke;
+  }
+  to {
+    box-shadow: 0 -5px 5px #9356dc, -5px 0 5px #ff79da, 0 5px 5px #99e2d0, -5px 0 5px whitesmoke;
+  }
+}
+@keyframes rotateCircle {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}
+@keyframes appearance {
+  0% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
+}
+.loader .container__animation #loader__li--1 {
+  animation-delay: 300ms;
+}
+.loader .container__animation #loader__li--2 {
+  animation-delay: 600ms;
+}
+.loader .container__animation #loader__li--3 {
+  animation-delay: 900ms;
+}
+.loader .container__animation #loader__li--4 {
+  animation-delay: 1200ms;
+}
+.loader .container__animation #loader__li--5 {
+  animation-delay: 1500ms;
+}
+.loader .container__animation #loader__li--6 {
+  animation-delay: 1800ms;
+}
+.loader .container__animation #loader__li--7 {
+  animation-delay: 2100ms;
+}
+.loader .container__animation .loader__ul {
+  display: flex;
+  align-self: flex-end;
+}
+.loader .container__animation .loader__ul .loader__li {
+  color: whitesmoke;
+  font-size: 1rem;
+  padding: 0px 5px;
+  animation-name: appearance;
+  animation-duration: 3000ms;
+  animation-delay: 0ms;
+  opacity: 0;
+}
+.loader .underline__loader {
+  position: absolute;
+  top: 60%;
+  border-radius: 0 0px 200px 200px;
+  width: 0px;
+  height: 10px;
+  border: transparent solid 2px;
+  opacity: 0;
+  box-shadow: 0 0 5px #9356dc, 0 5px 5px #ff79da, 5px 0 5px #99e2d0, 0 0 5px whitesmoke;
+  animation: widthPlate 8000ms;
+}
+@keyframes widthPlate {
+  0% {
+    opacity: 1;
+    width: 0;
+    height: 50px;
+  }
+  50% {
+    height: 10px;
+  }
+  100% {
+    height: 3px;
+    width: 300px;
+    opacity: 1;
+  }
+}
+
 /************************HEADER CONTAINER/LOGO/TITRE/EXPLORER RESTAURANTS***********************/
 .header__container {
   display: flex;
@@ -218,6 +356,7 @@ body {
   background-color: #f6f6f6;
   max-width: 900px;
   margin: auto;
+  z-index: 10;
 }
 .sectionH3Card h3 {
   font-weight: 900;
@@ -227,6 +366,7 @@ body {
   margin: auto;
 }
 .sectionH3Card .container__articles {
+  z-index: 10;
   display: flex;
   flex-wrap: wrap;
   row-gap: 1rem;
@@ -240,6 +380,7 @@ body {
   background-color: white;
 }
 .sectionH3Card .container__articles .card:hover {
+  z-index: 10;
   opacity: 0.8;
 }
 .sectionH3Card .container__articles .card__image {
@@ -370,6 +511,7 @@ body {
   margin: -40px auto 0px auto;
   padding: 40px;
   text-align: center;
+  /*HEART PAGES*/
 }
 .section__h2 h2 {
   font-weight: bold;
@@ -428,7 +570,7 @@ body {
     margin: 30px 0 0 10px;
   }
 }
-/**********************************ARTICLES****************/
+/**********************************ARTICLES BARRE SOUS CHOISE MENU FOR FOUR PAGES****************/
 .articleH3Choise h3 {
   color: #99e2d0;
   display: inline;
@@ -443,7 +585,7 @@ body {
   width: 15%;
 }
 
-/*********************************POUR BOUCLE FOR ENTREE/PLATS/DESSERTS***********/
+/*********************************BOUCLE FOR ENTREE/PLATS/DESSERTS CHOISE MENU FOR FOUR PAGES***********/
 .articleH3Choise__container {
   animation: slide both;
   animation-duration: 3000ms;
@@ -515,7 +657,7 @@ body {
   background-color: #99e2d0;
   overflow: hidden;
   /*CONTAINER TEXT *******************************/
-  /********************************************ANIMATION****************************************************************/
+  /********************************************ANIMATION CHOISE PAGE>ENTREE>PLATS****************************************************************/
   /*rotation de .fa-check div articleH3Choise__content__anim*/
 }
 .articleH3Choise__container a .articleH3Choise__content {

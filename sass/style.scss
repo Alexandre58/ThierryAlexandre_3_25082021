@@ -13,6 +13,134 @@ body {
     box-sizing: border-box;
     font-family: "Roboto", sans-serif;
 }
+/*LOADING OHMYFOOD*/
+.loader {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: absolute;
+    width: 100%;
+    height: 100vh;
+    background-color: rgb(14, 13, 13);
+    /*loader on/off*/
+    visibility: hidden;
+    z-index:0;
+    opacity: 0;
+    animation: loaderStop 3000ms ;
+        @keyframes loaderStop {
+            0% {
+                visibility: visible;
+                z-index: 15;
+                opacity: 1;
+            }50% {
+                z-index: 15;
+                opacity: 1;
+            }99%{
+                z-index: 15;
+                opacity: 0.9;
+            }100%{
+                visibility: hidden;
+                z-index:0;
+                opacity: 0;
+            }  
+        }
+        .container__animation {
+            display: flex;
+            column-gap: 10px;
+            justify-content: center;
+            align-items: center;
+            width: 100%;
+            margin: auto;
+            padding: 0;
+            .animation__o {
+                    border-radius: 50px;
+                    width: 70px;
+                    height: 71px;
+                    margin-right: 0px;
+                    animation: bigCircle 1s linear infinite alternate,
+                               rotateCircle 3s linear infinite;
+            }
+            @keyframes bigCircle {
+                from {
+                    box-shadow: 0 0 5px $primaire,
+                                0 5px 5px $secondaire,
+                                5px 0 5px $tertiaire,
+                                0 0 5px whitesmoke;
+                }to {
+                    box-shadow: 0 -5px 5px $primaire,
+                                -5px 0 5px $secondaire,
+                                0 5px 5px $tertiaire,
+                                -5px 0 5px whitesmoke;
+                } 
+            }    
+            @keyframes rotateCircle {
+                from {
+                    transform: rotate(0deg);
+                }to {
+                    transform: rotate(360deg);
+                }    
+            } 
+            @keyframes appearance {
+                0% {
+                    opacity:0;
+                }100% {
+                    opacity: 1;
+                } 
+            }
+            /*Appearance loader letter*/
+            @for $i from 1 through 7 {
+                #loader__li--#{$i} {     
+                    animation-delay: $i*300ms;
+                } 
+            }
+            .loader__ul {
+            display: flex;
+            align-self: flex-end;
+                .loader__li {                 
+                    color: whitesmoke;
+                    font-size: 1rem;
+                    padding: 0px 5px;
+                    animation-name: appearance;
+                    animation-duration: 3000ms;
+                    animation-delay: 0ms;
+                    opacity: 0;
+                }
+           }
+        } 
+        /*PLATE ANIMATION*/ 
+        .underline__loader {
+            position: absolute;
+            top: 60%;
+            border-radius: 0 0px 200px 200px;
+            width: 0px;
+            height: 10px;
+            border: transparent solid 2px;
+            opacity: 0;
+            box-shadow: 0 0 5px $primaire,
+                        0 5px 5px $secondaire,
+                        5px 0 5px $tertiaire,
+                        0 0 5px whitesmoke;
+            animation: widthPlate 8000ms;
+        }
+        @keyframes widthPlate {
+            0% {
+                opacity: 1;
+                width: 0;
+                height: 50px;
+            }50%{
+                
+                height:10px;
+            }100% {
+                height:3px;
+
+                width: 300px;
+                opacity:1;
+            } 
+        }   
+}
+
+
+
 /************************HEADER CONTAINER/LOGO/TITRE/EXPLORER RESTAURANTS***********************/
 .header__container {
     display: flex;
@@ -135,15 +263,16 @@ body {
             color: $primaire;
         }
     }
-}
-.navH3Choise__content:hover {
-    transform: scale(1.02);
-}
+    }
+    .navH3Choise__content:hover {
+        transform: scale(1.02);
+    }
 /**********************************SECTION ARTICLES H3 AND CARD*****************************/
 .sectionH3Card {
     background-color: #f6f6f6;
     max-width: 900px;
     margin: auto;
+    z-index: 10;
     & h3 {
         font-weight: 900;
         padding: 20px;
@@ -152,6 +281,7 @@ body {
         margin: auto;
     }
     .container__articles {
+        z-index: 10;
         display: flex;
         flex-wrap: wrap;
         row-gap: 1rem;
@@ -163,7 +293,8 @@ body {
             @include shadow;
             background-color: white;
         }
-        .card:hover {
+        .card:hover {   
+            z-index: 10;
             opacity: 0.8;
         }
         .card__image {
@@ -214,7 +345,7 @@ body {
     .sectionH3Card {
         @include rounded20();
         margin-bottom: 50px;
-    }
+    }    
 }
 /*************************************FOOTER**********************************************/
 .footer__container {
@@ -297,6 +428,7 @@ body {
         font-style: italic;
         font-size: 30px;
     }
+    /*HEART PAGES*/
     .section__heart {
         position: absolute;
         align-self: flex-end;
@@ -350,7 +482,7 @@ body {
         }
     }
 }
-/**********************************ARTICLES****************/
+/**********************************ARTICLES BARRE SOUS CHOISE MENU FOR FOUR PAGES****************/
 .articleH3Choise h3 {
     color: $tertiaire;
     display: inline;
@@ -363,7 +495,7 @@ body {
     height: 3px;
     width: 15%;
 }
-/*********************************POUR BOUCLE FOR ENTREE/PLATS/DESSERTS***********/
+/*********************************BOUCLE FOR ENTREE/PLATS/DESSERTS CHOISE MENU FOR FOUR PAGES***********/
 .articleH3Choise__container {
     animation: slide both;
     animation-duration: 3000ms;
@@ -440,7 +572,7 @@ body {
             margin: 0;
         }
     }
-    /********************************************ANIMATION****************************************************************/
+    /********************************************ANIMATION CHOISE PAGE>ENTREE>PLATS****************************************************************/
     .articleH3Choise__content__anim {
         display: flex;
         justify-content: center;
