@@ -48,9 +48,11 @@ body {
             display: flex;
             column-gap: 10px;
             justify-content: center;
+            align-items: flex-end;
             align-items: center;
             width: 100%;
-            margin: auto;
+            height: 90px;
+            margin:  0 auto;
             padding: 0;
             .animation__o {
                     border-radius: 50px;
@@ -96,14 +98,26 @@ body {
             .loader__ul {
             display: flex;
             align-self: flex-end;
-                .loader__li {                 
-                    color: whitesmoke;
+            align-items: flex-end;
+          
+                .loader__li {           
+                    color: $tertiaire;
                     font-size: 1rem;
                     padding: 0px 5px;
                     animation-name: appearance;
                     animation-duration: 3000ms;
                     animation-delay: 0ms;
                     opacity: 0;
+                }
+                .loader__li:not(#loader__li--1) {
+                    padding-bottom: 4px;
+                }
+                #loader__li--1{
+                     font-size: 2rem;
+                     margin-right: 5px;
+                     padding: 0;
+                     color: $primaire;
+                     opacity: 0;
                 }
            }
         } 
