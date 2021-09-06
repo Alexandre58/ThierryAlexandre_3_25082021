@@ -311,11 +311,13 @@ body {
         & :hover .fas {
             color: $primaire;
         }
+       
     }
     }
     .navH3Choise__content:hover {
         transform: scale(1.02);
     }
+
 /**********************************SECTION ARTICLES H3 AND CARD*****************************/
 .sectionH3Card {
     background-color: #f6f6f6;
@@ -338,9 +340,19 @@ body {
         justify-content: space-around;
         padding: 0 20px 33px 20px;
         .card {
+            position: relative;
             border-radius: 20px;
             @include shadow;
             background-color: white;
+        }
+        .container__articles--nouveau {
+            position: absolute;
+            padding: 5px;
+            top: 10%;
+            right: 5%;
+            background-color:#99e2d0;
+            color: #008766;
+            font-weight: 700;
         }
         .card:hover {   
             z-index: 10;
@@ -489,9 +501,9 @@ body {
 }
 /**********************************ARTICLES BARRE SOUS CHOISE MENU FOR FOUR PAGES****************/
 .articleH3Choise h3 {
-    color: $tertiaire;
     display: inline;
     font-weight: normal;
+    font-size: 1rem;
 }
 .articleH3Choise h3::after {
     content: "";
