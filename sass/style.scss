@@ -2,11 +2,7 @@
 @import url("https://fonts.googleapis.com/css2?family=Roboto&display=swap");
 @import "libs/reset.scss";
 @import "libs/mixins.scss";
-$size10: 10px;
-$size30: 30px;
-$primaire: #9356dc;
-$secondaire: #ff79da;
-$tertiaire: #99e2d0;
+@import "utils/variables.scss";
 body {
     padding: 0;
     margin: 0;
@@ -99,7 +95,6 @@ body {
             display: flex;
             align-self: flex-end;
             align-items: flex-end;
-          
                 .loader__li {           
                     color: $tertiaire;
                     font-size: 1rem;
@@ -110,10 +105,9 @@ body {
                     opacity: 0;
                 }
                 .loader__li:not(#loader__li--1) {
-                    padding-bottom: 4px;
+                    padding-bottom: 4px;     
                 }
-                #loader__li--1{
-                    
+                #loader__li--1{     
                      font-size: 2rem;
                      margin-right: 5px;
                      padding: 0;
@@ -135,35 +129,36 @@ body {
                         0 5px 5px $secondaire,
                         5px 0 5px $tertiaire,
                         0 0 5px whitesmoke;
-            animation: widthPlate 8000ms;
+            animation: widthPlate 4000ms;
         }
         @keyframes widthPlate {
             0% {
                 opacity: 1;
-                width: 0;
-                height: 50px;
-            }50%{
-                
-                height:10px;
-            }100% {
-                height:3px;
-
-                width: 300px;
+                width: 50px;
+                height: 80px;
+            }13%{
+                width: 50px;
+                height: 80px;
+            }36%{
+                width: 150px;
+                height:70px;
+            }65% {
+                height:15px;
+                width: 200px;
                 opacity:1;
-            } 
+            }100% {
+                height:15px;
+                width: 200px;
+                opacity:0;
+            }
         } 
         .underline__loader__hot {
             border-top:solid transparent 1px;
             position: absolute;
-            top: 60%;
-            box-shadow: 0px -5px 4px $primaire,
-            0 -18px 5px $secondaire,
-            0px -10px 5px $tertiaire,
-            0 -20px 10px whitesmoke;
+            top: 62%;
             width: 0px;
-            animation: widthPlateHot 8000ms,
-                       rotateHot 1000ms linear infinite alternate;
-
+            animation: widthPlateHot 7000ms,
+                       rotateHot 2000ms linear infinite;
         }
         @keyframes widthPlateHot {
             0% {
@@ -173,23 +168,22 @@ body {
             } 
         }
         @keyframes rotateHot {
-            from {
+            0% {
                 box-shadow: 15px 5px 5px $primaire,
-                            0 15px 5px $secondaire,
-                            15px 5px 5px $tertiaire,
-                            0 20px 5px whitesmoke;
-            }to {
-                box-shadow: 0 15px 5px $primaire,
-                            15px 5px 5px $secondaire,
-                            5px 15px 5px $tertiaire,
-                            5px 5px 5px whitesmoke;
-            }    
-        } 
-   
+                              0 10px 15px $secondaire,
+                            15px 5px 15px $tertiaire,
+                              0 10px 15px whitesmoke;
+            }90% {
+                box-shadow: 0 20px 10px $primaire,
+                          15px 0px 15px $secondaire,
+                          0px 15px 10px $tertiaire,
+                          15px 0px 15px whitesmoke;
+            }100% {
+                top: 58%;
+
+            }  
+        }  
 }
-
-
-
 /************************HEADER CONTAINER/LOGO/TITRE/EXPLORER RESTAURANTS***********************/
 .header__container {
     display: flex;
@@ -229,10 +223,10 @@ body {
         }
         & ::placeholder {
             background-color: #ebe9e9;
-            border-style: none;
+            border-style:none;
             color: black;
             font-weight: 700;
-            text-align: center;
+            text-align: center;   
         }
         #name {
             background-color: #ebe9e9;
@@ -241,22 +235,26 @@ body {
         #name:hover {
             background-color: #9b9999;
         }
-    }
-    .header__content {
-        display: flex;
-        flex-direction: column;
-        row-gap: 10px;
-        padding: 30px 20px;
-        text-align: center;
-        & h2 {
-            font-weight: 900;
+         input:focus {
+            outline: none;
         }
-    }
-    .header__button {
-        @include bouton;
-        margin: 0 0 50px 0;
-    }
+        }
+        .header__content {
+            display: flex;
+            flex-direction: column;
+            row-gap: 10px;
+            padding: 30px 20px;
+            text-align: center;
+            & h2 {
+                font-weight: 900;
+            }
+        }
+        .header__button {
+            @include bouton;
+            margin: 0 0 50px 0;
+        }
 }
+
 /**************************MAIN CONTAINER SECTIONH3CHOISE AND SECTIONH3CARD**********************/
 .main__container {
     margin: auto;
@@ -272,8 +270,8 @@ body {
     & h3 {
         font-weight: 900;
         max-width: 330px;
-        width: 100%;
-        margin: auto;
+        width: 90%;
+        text-align: start;
     }
     .navH3Choise__content {
         position: relative;
@@ -310,14 +308,12 @@ body {
         }
         & :hover .fas {
             color: $primaire;
-        }
-       
-    }
+        }  
+      }
     }
     .navH3Choise__content:hover {
         transform: scale(1.02);
     }
-
 /**********************************SECTION ARTICLES H3 AND CARD*****************************/
 .sectionH3Card {
     background-color: #f6f6f6;
@@ -326,10 +322,10 @@ body {
     z-index: 10;
     & h3 {
         font-weight: 900;
-        padding: 20px;
-        width: 100%;
+        width: 90%;
         max-width: 330px;
-        margin: auto;
+        text-align: start;
+        margin:20px auto;
     }
     .container__articles {
         z-index: 10;
@@ -355,8 +351,8 @@ body {
             font-weight: 700;
         }
         .card:hover {   
-            z-index: 10;
             opacity: 0.8;
+            box-shadow: 0px 0px 20px 0px rgba(0,0,0,0.30);
         }
         .card__image {
             object-fit: cover;
@@ -399,23 +395,39 @@ body {
     }
 }
 @media screen and (min-width: 780px) {
-    .navH3Choise h3,
-    .sectionH3Card h3 {
-        text-align: center;
+    .navH3Choise {
+        padding: 15px 15px 60px 15px;
+        & h3 {
+            font-weight: 900;
+            max-width: 330px;
+            width: 90%;
+            margin: auto;
+            text-align: center;
+        }
+    }
+    .articleH3Choise {
+        & h3 {
+          width:100%;
+          margin-left: 45%;
+        }
+    }
+    .articleH3Choise h3::after {
+        width: 100%;
     }
     .sectionH3Card {
         @include rounded20();
-        margin-bottom: 50px;
+        & h3 {
+            text-align: center;
+        }
     }    
 }
-
 /*************PAGE LA PALETTE DU GOUT***************************/
 .main__paletteDuGout__container {
     width: 100%;
     max-width: 1440px;
     margin: auto;
     @include shadowMain;
-    & container__img {
+    & .container__img {
         object-fit: cover;
     }
 }
@@ -435,8 +447,7 @@ body {
     position: relative;
     width: 100%;
     margin: -40px auto 0px auto;
-   
-   padding: 30px 10px;
+    padding: 30px 10px;
     text-align: center;
     & h2 {
         font-weight: bold;
@@ -636,7 +647,6 @@ body {
             padding: 15px 50px;
         }
     }
-   
     /*************************************FOOTER**********************************************/
 .footer__container {
         width: 100%;
