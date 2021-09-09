@@ -226,7 +226,7 @@ body {
   }
 }
 .loader .underline__loader__hot {
-  border-top: solid transparent 1px;
+  border-top: solid rgba(255, 255, 255, 0.089) 1px;
   position: absolute;
   top: 62%;
   width: 0px;
@@ -245,7 +245,7 @@ body {
     box-shadow: 15px 5px 5px #9356dc, 0 10px 15px #ff79da, 15px 5px 15px #99e2d0, 0 10px 15px whitesmoke;
   }
   90% {
-    box-shadow: 0 20px 10px #9356dc, 15px 0px 15px #ff79da, 0px 15px 10px #99e2d0, 15px 0px 15px whitesmoke;
+    box-shadow: 0 60px 10px #9356dc, 15px 0px 15px #ff79da, 0px 15px 10px #99e2d0, 15px 0px 15px whitesmoke;
   }
   100% {
     top: 58%;
@@ -478,7 +478,7 @@ body {
 }
 .sectionH3Card .container__articles .card__content .card__heart2::before {
   font-weight: bold;
-  transition: color 1s ease-out;
+  transition: color 3500ms ease-out;
 }
 .sectionH3Card .container__articles .card__content .card__heart2:hover::before {
   color: #b260db;
@@ -512,7 +512,7 @@ body {
     text-align: center;
   }
 }
-/*************PAGE LA PALETTE DU GOUT***************************/
+/*************PAGE***************************/
 .main__paletteDuGout__container {
   width: 100%;
   max-width: 1440px;
@@ -568,7 +568,7 @@ body {
 }
 .section__h2 .section__heart2::before {
   font-weight: bold;
-  transition: color 1s ease-out;
+  transition: color 3500ms ease-out;
 }
 .section__h2 .section__heart2:hover::before {
   color: #b260db;
@@ -627,7 +627,6 @@ body {
 
 @keyframes slide {
   0% {
-    margin-top: 25px;
     opacity: 0;
   }
   30% {
@@ -637,7 +636,6 @@ body {
     opacity: 0.3;
   }
   100% {
-    margin-top: 20px;
     opacity: 1;
   }
 }

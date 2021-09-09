@@ -153,7 +153,7 @@ body {
             }
         } 
         .underline__loader__hot {
-            border-top:solid transparent 1px;
+            border-top:solid rgba(255, 255, 255, 0.089) 1px;
             position: absolute;
             top: 62%;
             width: 0px;
@@ -174,7 +174,7 @@ body {
                             15px 5px 15px $tertiaire,
                               0 10px 15px whitesmoke;
             }90% {
-                box-shadow: 0 20px 10px $primaire,
+                box-shadow: 0 60px 10px $primaire,
                           15px 0px 15px $secondaire,
                           0px 15px 10px $tertiaire,
                           15px 0px 15px whitesmoke;
@@ -386,7 +386,7 @@ body {
             }
             .card__heart2::before {
                 font-weight: bold;
-                transition: color 1s ease-out;
+                transition: color 3500ms ease-out;
             }
             .card__heart2:hover::before {
                 color: #b260db;
@@ -421,7 +421,7 @@ body {
         }
     }    
 }
-/*************PAGE LA PALETTE DU GOUT***************************/
+/*************PAGE***************************/
 .main__paletteDuGout__container {
     width: 100%;
     max-width: 1440px;
@@ -474,7 +474,7 @@ body {
     }
     .section__heart2::before {
         font-weight: bold;
-        transition: color 1s ease-out;
+        transition: color 3500ms ease-out;
     }
     .section__heart2:hover::before {
         color: #b260db;
@@ -492,8 +492,7 @@ body {
         }
         .section__heart2 {
               right: 52px;
-              font-size: 29px;
-           
+              font-size: 29px;       
         }
     }
 }
@@ -533,7 +532,6 @@ body {
 }
 @keyframes slide {
     0% {
-        margin-top: 25px;
         opacity: 0;
     }
     30% {
@@ -543,7 +541,6 @@ body {
         opacity: 0.3;
     }
     100% {
-        margin-top: 20px;
         opacity: 1;
     }
 }
@@ -635,7 +632,7 @@ body {
         100% {
             transform: rotate(360deg);
         }
-    }
+      }
     }
     .section__button {
         width: 100%;
