@@ -371,29 +371,35 @@ body {
                 padding: 0 0 10px 10px;
                 font-weight: 100;
             }
+            /*************HEART INDEX***************/
             .card__heart {
-                position: absolute;
+                position: absolute;    
                 align-self: flex-end;
-                margin-right: 9px;
+                right: 8px;
+                font-size: 20px;
                 color: black;
-                font-size: 19px;
+                align-self: center; 
             }
-            .card__heart2 {
-                color: #fff;
-                position: absolute;
-                align-self: flex-end;
-                margin-right: 10px;
-            }
-            .card__heart2::before {
+            .card__heart:hover::before {
+                animation :heart1 3500ms ease;
                 font-weight: bold;
-                transition: color 3500ms ease-out;
+                background-clip:text;
+                -webkit-background-clip:text;
+                color: transparent;
+                background-image: linear-gradient(to top,#f8a3e0,#9356DC);
             }
-            .card__heart2:hover::before {
-                color: #b260db;
+            @keyframes heart1 {
+                0% {
+                   opacity: 0.2;
+                }100% {
+                    opacity: 1;
+                }      
             }
         }
+    
+        }
     }
-}
+
 @media screen and (min-width: 780px) {
     .navH3Choise {
         padding: 15px 15px 60px 15px;
@@ -443,7 +449,7 @@ body {
     display: flex;
     justify-content: space-between;
     @include two-bottom-rouned-corners;
-    background-color: white;
+    background-color:#cef0e7;
     position: relative;
     width: 100%;
     margin: -40px auto 0px auto;
@@ -460,24 +466,24 @@ body {
         position: absolute;
         align-self: flex-end;
         right: 8px;
-        font-size: 25px;
+        font-size: 0px;
         color: black;
-        font-weight: bolder;
-        align-self: center;
+        align-self: center;        
     }
-    .section__heart2 {
-        position: absolute;
-        align-self: center;
-        color: #fff;
-        right: 12px;
-        font-size: 19px;
-    }
-    .section__heart2::before {
+    .section__heart:hover::before {
+        animation :heart 3500ms ease;
         font-weight: bold;
-        transition: color 3500ms ease-out;
+        background-clip:text;
+        -webkit-background-clip:text;
+        color: transparent;
+        background-image: linear-gradient(to top,#f8a3e0,#9356DC);
     }
-    .section__heart2:hover::before {
-        color: #b260db;
+    @keyframes heart {
+        0% {
+           opacity: 0.2;
+        }100% {
+            opacity: 1;
+        }      
     }
 }
 @media screen and (min-width: 780px) {
@@ -489,10 +495,6 @@ body {
         .section__heart {
               right: 48px;
               font-size: 37px;
-        }
-        .section__heart2 {
-              right: 52px;
-              font-size: 29px;       
         }
     }
 }
@@ -553,6 +555,10 @@ body {
     }
 }
 /****************************ARTICLES DES ENTREES/PLATS/DESSERTS******************/
+section {
+    background-color: #cef0e7;
+
+}
 .articleH3Choise__container a {
     display: flex;
     @include shadow;
@@ -568,7 +574,7 @@ body {
         justify-content: space-between;
         align-items: flex-start;
         @include two-bottom-rouned-corners-left;
-        background-color: #ece3e3;
+        background-color:white;
         text-align: center;
         width: 100%;
         padding: 10px 10px !important;
