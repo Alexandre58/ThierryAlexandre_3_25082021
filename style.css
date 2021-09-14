@@ -541,7 +541,7 @@ body {
   display: flex;
   justify-content: space-between;
   border-radius: 20px 20px 0 0;
-  background-color: #cef0e7;
+  background-color: #f6f6f6;
   position: relative;
   width: 100%;
   margin: -40px auto 0px auto;
@@ -681,7 +681,7 @@ body {
 
 /****************************ARTICLES DES ENTREES/PLATS/DESSERTS******************/
 section {
-  background-color: #cef0e7;
+  background-color: #f6f6f6;
 }
 
 .articleH3Choise__container a {
